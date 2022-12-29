@@ -11,6 +11,10 @@ node slave1 {
     ensure => running,
     enable => true,
   }
+  service { 'firewalld':
+    ensure => stopped,
+    enable => false,
+  }
 }
 
 node slave2 {
@@ -33,5 +37,9 @@ node slave2 {
   service { 'httpd':
     ensure => running,
     enable => true,
+  }
+  service { 'firewalld':
+    ensure => stopped,
+    enable => false,
   }
 }
