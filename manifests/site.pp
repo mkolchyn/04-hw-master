@@ -3,6 +3,14 @@ node slave1 {
     ensure => installed,
     name   => httpd,
   }
+  file { '/var/www/html':
+     ensure => present,
+     source => "/vagrant/index.html",
+  }
+  service { 'httpd':
+    ensure => running,
+    enable => true,
+  }
 }
 
 node slave2 {
@@ -13,5 +21,17 @@ node slave2 {
   package { 'php':
     ensure => installed,
     name   => php,
+  }
+  file { '/var/www/html':
+          ensure => present,
+          source => "/vagrant/index.php",
+  }
+  service { 'php-fpm':
+    ensure => running,
+    enable => true,
+  }
+  service { 'httpd':
+    ensure => running,
+    enable => true,
   }
 }
