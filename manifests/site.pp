@@ -3,7 +3,7 @@ node slave1 {
     ensure => installed,
     name   => httpd,
   }
-  file { '/var/www/html/':
+  file { '/var/www/html/index.html':
      ensure => present,
      source => "/vagrant/index.html",
   }
@@ -22,7 +22,7 @@ node slave2 {
     ensure => installed,
     name   => php,
   }
-  file { '/var/www/html/':
+  file { '/var/www/html/index.php':
           ensure => present,
           source => "/vagrant/index.php",
   }
