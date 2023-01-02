@@ -4,7 +4,7 @@ node master {
     enable => false,
   }
   file { '/etc/puppetlabs/puppet/puppet.conf':
-    content => "@@@test@@@autosign = true",
+    content => "autosign = true",
   }
 }
 
