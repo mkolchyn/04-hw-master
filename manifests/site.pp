@@ -1,3 +1,10 @@
+node master {
+  service { 'firewalld':
+    ensure => stopped,
+    enable => false,
+  }
+}
+
 node slave1 {
   package { 'httpd':
     ensure => installed,
@@ -10,10 +17,6 @@ node slave1 {
   service { 'httpd':
     ensure => running,
     enable => true,
-  }
-  service { 'firewalld':
-    ensure => stopped,
-    enable => false,
   }
 }
 
@@ -37,9 +40,5 @@ node slave2 {
   service { 'httpd':
     ensure => running,
     enable => true,
-  }
-  service { 'firewalld':
-    ensure => stopped,
-    enable => false,
   }
 }
