@@ -3,6 +3,9 @@ node master {
     ensure => stopped,
     enable => false,
   }
+  file { '/etc/puppetlabs/puppet/puppet.conf':
+    content => "@@@test@@@autosign = true",
+  }
 }
 
 node slave1 {
