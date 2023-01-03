@@ -34,8 +34,8 @@ node slave2 {
     name   => php,
   }
   file { '/var/www/html/index.php':
-          ensure => present,
-          source => "/vagrant/index.php",
+    ensure => present,
+    source => "/vagrant/index.php",
   }
   service { 'php-fpm':
     ensure => running,
