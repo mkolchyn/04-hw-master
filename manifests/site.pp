@@ -11,8 +11,8 @@ node slave1 {
     name   => httpd,
   }
   file { '/var/www/html/index.html':
-     ensure => present,
-     source => "/vagrant/index.html",
+    ensure => present,
+    source => "/vagrant/index.html",
   }
   service { 'httpd':
     ensure => running,
