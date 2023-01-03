@@ -3,9 +3,6 @@ node master {
     ensure => stopped,
     enable => false,
   }
-  file { '/etc/puppetlabs/puppet/puppet.conf':
-    content => "[server]\nvardir = /opt/puppetlabs/server/data/puppetserver\nlogdir = /var/log/puppetlabs/puppetserver\nrundir = /var/run/puppetlabs/puppetserver\npidfile = /var/run/puppetlabs/puppetserver/puppetserver.pid\ncodedir = /etc/puppetlabs/code\nautosign = true\n\n[agent]\nserver = master\nruninterval = 1m",
-  }
 }
 
 node slave1 {
