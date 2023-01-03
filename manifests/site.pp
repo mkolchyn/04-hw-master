@@ -4,7 +4,7 @@ node master {
     enable => false,
   }
   file { '/etc/puppetlabs/puppet/puppet.conf':
-    content => "autosign = true",
+    content => "autosign = true\n\n[agent]\nserver = master\nruninterval = 1m",
   }
 }
 
